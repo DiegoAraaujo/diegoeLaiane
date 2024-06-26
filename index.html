@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Te amo infinitamente meu amor!</h1>
+    </header>
+    <main>
+        <div id="galeria">
+            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.38.jpeg" alt="" class="fotos">
+            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.39 (1).jpeg" alt="" class="fotos">
+            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.39.jpeg" alt="" class="fotos">
+            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.40 (1).jpeg" alt="" class="fotos">
+            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.40.jpeg" alt="" class="fotos">
+        </div>
+        <div id="botoes">
+            <div id="avancar" onclick="proximo()">
+                ▶️
+            </div>
+            <div id="voltar" onclick="anterior()">
+                ▶️
+            </div>
+        </div>
+    </main>
+    <script>
+             let indice = 0
+            const imagens = document.getElementsByClassName("fotos")
+            imagens[indice].style.display = 'block'
+
+            function anterior() {
+                if (indice === 0) {
+                    imagens[imagens.length - 1].style.display = 'block';
+                    imagens[indice].style.display = 'none';
+                    indice = imagens.length - 1; 
+                } else {
+                    imagens[indice].style.display = 'none'; 
+                    imagens[indice - 1].style.display = 'block'; 
+                    indice--; 
+                }
+            }
+            function proximo() {
+                if (indice === imagens.length - 1) {
+                    imagens[0].style.display = 'block';
+                    imagens[indice].style.display = 'none';
+                    indice = 0;
+                } else {
+                    imagens[indice].style.display = 'none';
+                    imagens[indice + 1].style.display = 'block';
+                    indice++;
+                }
+            }
+    </script>
+</body>
+</html>
