@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página com Áudio e Galeria de Fotos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,48 +12,64 @@
     </header>
     <main>
         <div id="galeria">
-            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.38.jpeg" alt="" class="fotos">
-            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.39 (1).jpeg" alt="" class="fotos">
-            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.39.jpeg" alt="" class="fotos">
-            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.40 (1).jpeg" alt="" class="fotos">
-            <img src="iloveimg-resized/WhatsApp Image 2024-06-26 at 09.22.40.jpeg" alt="" class="fotos">
+            <img src="iloveimg-resized/IMG_2052.jpg" alt="" class="fotos">
+            <img src="iloveimg-resized/IMG_2053.jpg" alt="" class="fotos">
+            <img src="iloveimg-resized/IMG_2054.jpg" alt="" class="fotos">
+            <img src="iloveimg-resized/IMG_2057.jpg" alt="" class="fotos">
+            <img src="iloveimg-resized/IMG_2056.jpg" alt="" class="fotos">
         </div>
         <div id="botoes">
-            <div id="avancar" onclick="proximo()">
-                ▶️
-            </div>
             <div id="voltar" onclick="anterior()">
+                ◀️
+            </div>
+            <div id="avancar" onclick="proximo()">
                 ▶️
             </div>
         </div>
     </main>
+    <div id="recado">
+        <p>Algumas fotos do meu amor, minha gatinha tão perfeita. Escute o áudio que fala perfeitamente como você é:</p>
+        <audio id="meuAudio" src="ssstik.io_1719439068047.mp3" controls></audio>
+    </div>
     <script>
-             let indice = 0
-            const imagens = document.getElementsByClassName("fotos")
-            imagens[indice].style.display = 'block'
+        const meuAudio = document.getElementById('meuAudio');
+        const header = document.querySelector('header');
+        const main = document.querySelector('main');
+        const recado = document.getElementById('recado');
 
-            function anterior() {
-                if (indice === 0) {
-                    imagens[imagens.length - 1].style.display = 'block';
-                    imagens[indice].style.display = 'none';
-                    indice = imagens.length - 1; 
-                } else {
-                    imagens[indice].style.display = 'none'; 
-                    imagens[indice - 1].style.display = 'block'; 
-                    indice--; 
-                }
+        meuAudio.addEventListener('ended', function() {
+            header.style.display = 'block';
+            main.style.display = 'block';
+            recado.style.display = 'none';
+        });
+
+        let indice = 0;
+        const imagens = document.getElementsByClassName("fotos");
+        imagens[indice].style.display = 'block';
+
+        function anterior() {
+            if (indice === 0) {
+                imagens[imagens.length - 1].style.display = 'block';
+                imagens[indice].style.display = 'none';
+                indice = imagens.length - 1; 
+            } else {
+                imagens[indice].style.display = 'none'; 
+                imagens[indice - 1].style.display = 'block'; 
+                indice--; 
             }
-            function proximo() {
-                if (indice === imagens.length - 1) {
-                    imagens[0].style.display = 'block';
-                    imagens[indice].style.display = 'none';
-                    indice = 0;
-                } else {
-                    imagens[indice].style.display = 'none';
-                    imagens[indice + 1].style.display = 'block';
-                    indice++;
-                }
+        }
+
+        function proximo() {
+            if (indice === imagens.length - 1) {
+                imagens[0].style.display = 'block';
+                imagens[indice].style.display = 'none';
+                indice = 0;
+            } else {
+                imagens[indice].style.display = 'none';
+                imagens[indice + 1].style.display = 'block';
+                indice++;
             }
+        }
     </script>
 </body>
 </html>

@@ -12,8 +12,10 @@ header{
     width: 350px;
     margin: auto;
     color: white;
+    display: none;
 }
 main{
+    display: none;
     width: 350px;
     margin: auto;
 }
@@ -37,4 +39,10 @@ img{
     font-size: 30px;
     padding: 10px;
     text-align: center;
+}
+#recado{
+    margin: auto;
+    text-align: center;
+    line-height: 1.5;
+    width: 350px;
 }
